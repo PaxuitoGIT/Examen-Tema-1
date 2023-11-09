@@ -1,12 +1,26 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include <vector>
 
 class Estudiante {
     public:
         std::string nombre;
         int edad;
         std::string grado;
+        std::vector<std::string> materias;
+
+        void registrar_materia (std::string materia) {
+            materias.push_back(materia);
+        }
+
+        void mostrar_materias() {
+            std::cout << "Materias: " << std::endl;
+            for (const auto& materia : materias) {
+                std::cout << materia << " ";
+            }
+            std::cout << std::endl;
+        }
 
         void mostrar_info() {
             try {
