@@ -1,5 +1,6 @@
 #include <iostream>
 #include "estudiante.h"
+#include "promedioestudiante.h"
 
 int main() {
     Estudiante estudiante;
@@ -14,6 +15,11 @@ int main() {
 
     estudiante.mostrar_info();
     estudiante.mostrar_materias();
+
+    std::vector<int> calificaciones = { 10, 5, 8, 7};
+    double promedio = calcular_promedio(calificaciones);
+
+    std::cout << "El promedio del estudiante es: " << promedio << std::endl;
 
     return 0;
 }
