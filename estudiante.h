@@ -1,3 +1,7 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
 class Estudiante {
     public:
         std::string nombre;
@@ -6,12 +10,15 @@ class Estudiante {
 
         void mostrar_info() {
             try {
-                if (nombre.empty() edad <= 0 grado.empty()) {
+                if (nombre.empty() && edad <= 0 && grado.empty()) {
                     throw std::string("Error: No se ha ingresado informacion del estudiante");
                 }
-            }
+            
             std::cout << "Nombre: " << nombre << std::endl;
             std::cout << "Edad: " << edad << std::endl;
             std::cout << "Grado: " << grado << std::endl;
+        } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << std::endl;
         }
 }
+};
