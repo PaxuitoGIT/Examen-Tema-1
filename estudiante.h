@@ -1,7 +1,11 @@
+#ifndef ESTUDIANTE_H
+#define ESTUDIANTE_H
+
 #include <iostream>
 #include <string>
 #include <stdexcept>
 #include <vector>
+
 
 class Estudiante {
     public:
@@ -34,5 +38,7 @@ class Estudiante {
         } catch (const std::invalid_argument& e) {
             std::cout << e.what() << std::endl;
         }
-}
+    }
 };
+
+#endif // ESTUDIANTE_H
