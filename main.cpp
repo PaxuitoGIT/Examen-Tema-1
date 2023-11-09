@@ -4,6 +4,7 @@
 #include "promedioestudiante.h"
 #include "asistencia.h"
 #include "filtro.h"
+#include "profesor.h"
 
 class MateriaYaRegistradaException : public std::exception {
     public:
@@ -58,6 +59,13 @@ int main() {
     for (auto& estudiante : estudiantes_filtrados) {
     estudiante.mostrar_info();
 }
+    Profesor profesor1;
+    profesor1.nombre = "Alberto";
+    profesor1.edad = 30;
+    profesor1.materia = "Fisica";
+    profesor1.anos_experiencia = 5;
 
+    profesor1.mostrar_info_profesor();
+    
     return 0;
 }
