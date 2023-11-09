@@ -18,6 +18,8 @@ d. Ninguna de las anteriores
 
 # Parte 2: Problemas de codificación
 
+Nota: Si se necesita ejecutar el programa del main.cpp se necesitan los includes de los encabezados
+
 ### 1.Operaciones Básicas
 
 Creé un solo archivo que incluya todo este codigo [aquí](https://github.com/PaxuitoGIT/Examen-Tema-1/blob/main/Operacion_basica.cpp)
