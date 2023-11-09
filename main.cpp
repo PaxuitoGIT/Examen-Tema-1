@@ -5,6 +5,12 @@
 #include "asistencia.h"
 #include "filtro.h"
 
+class MateriaYaRegistradaException : public std::exception {
+    public:
+    const char* what() const throw() {
+        return "La materia ya fue registrada";
+    }
+};
 int main() {
 
     Estudiante estudiante1;
@@ -25,6 +31,12 @@ int main() {
     estudiante1.registrar_materia("Fisica");
     estudiante1.registrar_materia("Matematicas");
     estudiante1.registrar_materia("Programacion");
+
+    try {
+        estudiante1.registrar_materia("Fisica");
+    } catch (const MateriaYaRegistradaException& e) {
+        std::cerr << e.what() << std::endl;
+    }
 
     estudiante1.mostrar_info();
     estudiante1.mostrar_materias();
