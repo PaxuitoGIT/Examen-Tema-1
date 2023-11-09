@@ -17,18 +17,28 @@ std::vector<Estudiante> filtrar_por_grado(const std::vector<Estudiante>& estudia
 }
 
 int main() {
-    Estudiante estudiante;
 
-    estudiante.nombre = "Binhao";
-    estudiante.edad = 18;
-    estudiante.grado = "Informatica";
+    Estudiante estudiante1;
+    estudiante1.nombre = "Binhao";
+    estudiante1.edad = 18;
+    estudiante1.grado = "Informatica";
 
-    estudiante.registrar_materia("Fisica");
-    estudiante.registrar_materia("Matematicas");
-    estudiante.registrar_materia("Programacion");
+    Estudiante estudiante2;
+    estudiante2.nombre = "Juan";
+    estudiante2.edad = 20;
+    estudiante2.grado = "Informatica";
 
-    estudiante.mostrar_info();
-    estudiante.mostrar_materias();
+    Estudiante estudiante3;
+    estudiante3.nombre = "Maria";
+    estudiante3.edad = 19;
+    estudiante3.grado = "Matematicas";
+
+    estudiante1.registrar_materia("Fisica");
+    estudiante1.registrar_materia("Matematicas");
+    estudiante1.registrar_materia("Programacion");
+
+    estudiante1.mostrar_info();
+    estudiante1.mostrar_materias();
 
     std::vector<int> calificaciones = { 10, 5, 8, 7};
     double promedio = calcular_promedio(calificaciones);
@@ -40,6 +50,13 @@ int main() {
     asistencia.estado = "Asistio";
 
     asistencia.mostrar_asistencia();
+
+    std::vector<Estudiante> estudiantes = { estudiante1, estudiante2, estudiante3 };
+    std::vector<Estudiante> estudiantes_filtrados = filtrar_por_grado(estudiantes, "Informatica");
+
+    for (auto& estudiante : estudiantes_filtrados) {
+    estudiante.mostrar_info();
+}
 
     return 0;
 }
